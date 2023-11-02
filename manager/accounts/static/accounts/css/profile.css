@@ -1,0 +1,321 @@
+li .connection {
+    color: green;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+section {
+    margin-left: 30px;
+}
+
+
+.container-box {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 9px 14px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
+  .image-container {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 auto;
+    width: 500px;
+    max-width: initial;
+    height: 343px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+  }
+
+  .image-container {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 auto;
+    width: 319px;
+    max-width: initial;
+    height: 343px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+  }
+
+  .card-container {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+    padding-right: 44px;
+    padding-left: 43px;
+    margin-top: 16px;
+    background: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
+  .container-image {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+  }
+
+  .container-image a {
+    margin-right: 20px;
+  }
+  .image-container3 {
+    box-sizing: border-box;
+    display: block;
+    width: 46px;
+    max-width: initial;
+    height: 46px;
+    border: none;
+    object-fit: cover;
+  }
+
+  .image-container1 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-left: 32px;
+  }
+  .image-container2 {
+    box-sizing: border-box;
+    display: block;
+    width: 34px;
+    max-width: initial;
+    height: 35px;
+    border: none;
+    object-fit: cover;
+  }
+
+
+  .div-style-86a2e07e {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+    padding: 25px 39px 77px 42px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .div-style-b74be968 {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-bottom: 7px;
+  }
+  .p-style-edd184ef {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font: 400 24px Montserrat;
+    color: black;
+  }
+  .div-style-c7f4fd57 {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-top: 5px;
+  }
+  .p-style-ec3cf6b1 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    align-self: flex-end;
+    padding-right: 21px;
+    padding-left: 21px;
+    font: 400 24px Montserrat;
+    color: #6a2fde;
+  }
+  .div-style-b1a29b84 {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 28px;
+  }
+  .p-style-5029a530 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font: 400 16px Montserrat;
+    color: #776c6c;
+  }
+  .p-style-2be5fc5d {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-left: 7.75px;
+    font: 400 16px Montserrat;
+    color: black;
+  }
+  .p-style-671797e9 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-top: 7px;
+    font: 400 16px Montserrat;
+    color: #776c6c;
+  }
+  .span-style-7c44648c {
+    color: black;
+  }
+  .p-style-6e404d16 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-top: 13px;
+    font: 400 16px Montserrat;
+    color: #776c6c;
+  }
+  
+
+  
+.div-style-90c4de2b {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 13px;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-top: 23px;
+  }
+  .div-style-84f82e7a {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .p-style-5029a530 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font: 400 16px Montserrat;
+    color: #776c6c;
+  }
+  .p-style-d77383cd {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-left: 16px;
+    font: 400 16px Montserrat;
+    color: black;
+  }
+  .p-style-ad46357e {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-left: 9.5px;
+    font: 400 16px Montserrat;
+    color: black;
+  }
+  
+
+  .experience-card {
+    box-sizing: border-box;
+    padding: 29px 9px 261px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .experience-summary {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .experience-summary1 {
+    box-sizing: border-box;
+    flex: 0 1 auto;
+    max-width: 175px;
+    font: 400 20px Montserrat;
+    color: black;
+  }
+  .experience-years {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-top: 19px;
+    padding-bottom: 5px;
+    margin-left: -12px;
+    font: 400 20px Montserrat;
+    color: black;
+  }
+
+  
+  .experience-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-top: 17px;
+  }
+  .experience-text {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 5px;
+    padding-left: 5px;
+    font: 400 20px Montserrat;
+    color: black;
+  }
+  .experience-text1 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    max-width: 317px;
+    margin-top: 17px;
+    font: 400 18px Montserrat;
+    color: black;
+  }
+
+  #about_me {
+    margin: 0 auto;
+  }
+
+  #about_me1{
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  #about_me1 .row{
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  #about_me1 .row p{
+    margin-left: 30px;
+  }
+  #about_me2{
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  #about_me2 .row{
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  #about_me2 .row p{
+    margin-left: 30px;
+  }

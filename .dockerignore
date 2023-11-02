@@ -1,0 +1,4 @@
+touch .dockerignore
+echo "postgresql" >> .dockerignore
+echo ".env" >> .dockerignore
+echo "__pycache__" >> .dockerignore

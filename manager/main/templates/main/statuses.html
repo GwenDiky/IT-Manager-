@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Статусы задач</title>
+    </head>
+
+    <body>
+        {% for status in statuses %}
+            <p>{{ status.title }}</p>
+        {% endfor %}    
+    </body>
+</html>

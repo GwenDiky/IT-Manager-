@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% load static %} <!--загружает модуль расширения-->
+
+{% block title %}
+    Поделиться задачей
+{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/share.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% if sent %}
+    <h1>Письмо успешно отправлено!</h1>
+    <p>
+
+        "{{ task.title }}" был успешно отправлен {{ form.cleaned_data.to }}.
+    </p>
+    {% else %}
+    <h6>Поделитесь "{{ task.title }}" по электронной почте</h6>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="Оправить e-mail">
+    </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}Фильтрация{{ current_status.title }}
+{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/by_statuses.css' %}">
+{% endblock %}
+
+{% block content %}
+        <h2>Задачи: {{ current_status.title }}</h2>
+        <div class='task'>
+            {% for task_status in tasks_by_status %}
+                <h5>Название: {{ task_status.title }}</h5>
+                <p>Содержание: {{ task_status.content }}</p>
+                <p>Дата добавления: {{ task_status.created|date:"Y-m-d" }}</p>
+                <p>Дата выполнения: {{ task_status.complete_date }}</p>
+            {% endfor %}
+        </div>
+{% endblock %}

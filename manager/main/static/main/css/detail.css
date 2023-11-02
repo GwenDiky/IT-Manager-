@@ -1,0 +1,107 @@
+
+section {
+    font-family: Montserrat;
+    font-size: 15px;
+}
+
+.comment_section{
+    width: 500px;
+}
+
+h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.comment_section{
+    margin-top: 50px;
+}
+
+a {
+    font-size: 16px;
+}
+
+
+.start-button {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 auto;
+    width: 170;
+    height: 50px;
+    font: 500 18px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #976aa1;
+    border: none;
+    border-radius: 10px;
+ 
+    justify-content: left;
+    padding-top: 13px;
+    text-align: center;
+  }
+ 
+  .start-button:hover {color: white;}
+ 
+
+
+
+ 
+  #task-button-2 {
+    box-sizing: border-box;
+    display: block;
+    align-items: stretch;
+    justify-content: center;
+    height: 50px;
+    width: 170px;
+    background: #536e9c;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font: 500 18px Montserrat;
+    padding-top: 13px;
+    text-align: center;
+  }
+
+  .start-button2 {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 auto;
+    width: 170px;
+    height: 49px;
+    font: 500 18px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #976aa1;
+    border: none;
+    border-radius: 10px;
+ 
+    justify-content: left;
+    padding-top: 13px;
+    text-align: center;
+  }
+ 
+  .start-button2:hover {color: white;}
+
+  .start-button3 {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 auto;
+    width: 100px;
+    height: 49px;
+    font: 500 18px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #976aa1;
+    border: none;
+    border-radius: 10px;
+ 
+    justify-content: left;
+    padding-top: 13px;
+    text-align: center;
+  }
+ 
+  .start-button3:hover {color: white;}

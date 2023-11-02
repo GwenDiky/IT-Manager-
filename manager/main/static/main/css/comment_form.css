@@ -1,0 +1,20 @@
+
+.start-button2 {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 auto;
+    width: 170px;
+    height: 49px;
+    font: 500 18px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #976aa1;
+    border: none;
+    border-radius: 10px;
+ 
+    justify-content: left;
+    padding-top: 13px;
+    text-align: center;
+  }
+ 
+  .start-button2:hover {color: white;}

@@ -1,0 +1,13 @@
+markdown==3.4.1
+django==4.2.2
+djangorestframework==3.14.0
+pillow==10.1.0
+psycopg2-binary==2.9.9
+django-taggit==5.0.1
+social-auth-app-django==5.4.0
+social-auth-core==4.5.0
+setuptools==68.2.2
+drf_yasg==1.21.7
+django-phonenumber-field
+django-phonenumbers
+reportlab

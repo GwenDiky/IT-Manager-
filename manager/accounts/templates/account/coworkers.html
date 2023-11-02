@@ -1,0 +1,35 @@
+{% extends 'layout/base.html' %}
+{% load main_tags %}
+{% load static %}
+
+{% block title %}Коллеги{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/profile.css' %}">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+{% endblock %}
+
+{% block content %}
+
+{% for profile in profiles %}
+    {% for follower in profile.follows.all %}
+        <div class='div-style-86a2e07e' style='width: 50%; margin-left: 30px; height: 80%;'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-sm-5'>
+                        <img class='image-container' alt="{{ follower.user.first_name }}" style='max-width: 250px; max-height: 250px;' src="{{ follower.photo.url }}">
+                    </div>
+                    <div class='col-sm-5'><p class='p-style-edd184ef'><a href='{% url "accounts:profile" follower.user.id %}' style='font-size: 20px;'>{{ follower.user.first_name }} {{ follower.user.last_name }}</a></p>
+                        <p class='p-style-d77383cd' style='margin-left: 0px;'>@{{ follower.user.username }}</p>
+                        <p class='p-style-edd184ef' style='font-size: 17px;'>Область профессиональных интересов:</p>
+                            <p class='p-style-ad46357e' style='margin-left:0px;'>{{ follower.skills }}</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    
+        <br><br>
+
+    {% endfor %}
+{% endfor %}
+{% endblock %}

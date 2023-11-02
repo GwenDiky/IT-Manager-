@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}
+  {{title}}
+{% endblock %}
+{% block content %}
+    {% for task in tasks %}
+        <div>
+            <h2>task.title</h2>
+            <p>task.status.title</p>
+            <p>content</p>
+        </div>
+    {% endfor %}
+{% endblock %}

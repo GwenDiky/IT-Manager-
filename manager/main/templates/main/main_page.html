@@ -1,0 +1,164 @@
+{% extends 'layout/base.html' %}
+{% load main_tags %}
+{% load static %} <!--загружает модуль расширения-->
+
+{% block title %}
+    Главная|Управление ИТ-проектами {{ title }}
+{% endblock %}
+{% block extra_head_links %}
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main_page.css' %}">
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class='row'>
+  <div class='container'>
+    <div class="row">
+        <div id='main_strip'>
+          <p class='title'>IT Manager - управление и организация различных <br> аспектов проекта</p> 
+        </div>
+    </div>
+    <div class='row' id='status_container'>
+      <div class='col-sm-3 align-self-center'></div>
+
+      <div class='col-sm-4 align-self-center' style='text-align: justify;'>
+        
+        <div class="recent-tasks">
+          <p class="recent-tasks-title">Недавние задачи:</p>
+          <p class="recent-tasks-paragraph">{% show_latest_tasks 3 %}</p>
+        </div>
+      
+      </div>
+      
+      <div class='col-sm-4 align-self-center' style='text-align: justify;'>
+
+        <div class="recent-tasks">
+          <p class="recent-tasks-title">Самые комментируемые:</p>
+          <p class="recent-tasks-paragraph">
+            {% get_most_commented_tasks as most_commented_tasks %}
+              <ul style='margin-left: -10px;'>
+                  {% for task in most_commented_tasks %}
+                    <li style='font-size: 18px; font-family: Montserrat;'>
+                        <a href="{{ task.get_absolute_url }}" style='font-size: 16px;'>{{ task.title }}</a>
+                    </li>
+                  {% endfor %}
+              </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class='col-sm-1 align-self-center'></div>
+ 
+    </div>
+
+    <div class="col align-self-center">
+      <a href="{% url 'main:add' %}" class="start-button"><p>Начать работу</p></a>
+    </div>
+
+        <div id='about-container'>
+          <h3 style='text-align: center; color:white; padding-top: 20px; font-family: Montserrat'>Что мы предлагаем:</h3>
+          <div class='row'>
+            <div id='about-container-small'>
+              <div class="row">
+                <div class="col-2" style='margin-left: 70px; padding-top: 10px;' id='about-container-small-notes'>Гибкое расписание: Вы можете составлять расписание задач, устанавливать приоритеты и следить за ходом выполнения проектов.</div>
+                <div class="col-1"><!--extra div--></div>
+                <div class="col-2" style='padding-top: 10px;' id='about-container-small-notes'>Консультации: Наша команда готова поделиться своими знаниями и опытом с вами. Разработка оптимальных стратегий для вашего бизнеса.</div>
+
+                <div class="col-1"><!--extra div--></div>
+                
+                <div class="col-2" style='padding-top: 10px;' id='about-container-small-notes'>Коллаборация и коммуникация: Мы предоставляем инструменты для совместной работы, что способствует более эффективному взаимодействию.</div>
+                <div class="col-1"><!--extra div--></div>
+                <div class="col-2" style='padding-top: 10px;' id='about-container-small-notes' >Удобное планирование задач: Наше приложение позволяет вам создавать и управлять задачами легко и интуитивно.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class='row'>
+          <div class='task-dashbord' style='margin-top: 200px;'>
+            <div class='row'>
+              <div class='col-6'>
+                <img src="{% static 'main/img/kandinsky-download-1697104684194.png' %}" class='rounded' id='task-dashbord-img' alt="Example" style='box-shadow: 0px 1px 3px 1px #000;'>
+              </div>
+              <div class='col-5'>
+                <h4 style='margin-bottom: 20px;'>О нас</h4>
+                <p>
+
+                  Мы - команда специалистов, создавшая инновационный инструмент для управления IT-проектами. 
+                  Наша цель - помочь вам упростить процесс планирования и управления задачами в области информационных технологий.
+                  
+                  <br><h5>Кто мы?</h5>
+                  Мы - группа энтузиастов, которые разделяют вашу страсть к технологиям и эффективному управлению проектами. Наша команда объединяет профессионалов с разнообразным опытом в IT и управлении проектами.
+                  <br>
+
+                  <br><h5>Наши ценности</h5>
+                  <ul><li>Простота и эффективность: Мы верим, что управление проектами в IT должно быть простым и эффективным. Наш инструмент спроектирован с учетом этой философии.</li>
+                    <li>Инновации: Мы следим за последними технологическими тенденциями и постоянно обновляем наше приложение, чтобы предоставить вам лучший опыт.</li>
+                    <li>Поддержка клиентов: Ваш успех - наш приоритет. Мы предоставляем отличное обслуживание клиентов и всегда готовы помочь вам достичь ваших целей.</li>
+                  </ul>
+
+                  Мы разработали это приложение, чтобы сделать вашу жизнь проще и помочь вам достигать больших результатов в управлении IT-проектами. Наша команда гордится тем, что мы можем внести вклад в ваш успех.
+
+                  <br><br>Присоединяйтесь к нам сегодня и начните управлять вашими IT-проектами с легкостью и эффективностью!
+
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='support' style='background-color: #a9bfca; height: 50px;'>
+            <div class='row' id='footer-last' style='margin-left: 100px; margin-top: 15px; text-decoration: underline;'>
+              <div class='row'>
+                  <div class='col-2'>Privary Police</div>
+                  <div class='col-2'>Terms Of Use</div>
+                  <div class='col-2'>Contact Us</div>
+              </div>
+          
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='additional-info' style='background-color: #95a5bc; height: 270px; width: 100%;'>
+            <div class='row'>
+              <div class='col-3' style='margin-left: 100px;'><p>Learn More
+                <p style='font-size: 16px; margin-top: 0px;'>Our Team</p>
+                <p style='font-size: 16px; margin-top: 0px;'>Consult With Us</p>
+                <p style='font-size: 16px; margin-top: 0px;'>Our Services</p>
+              </p>
+            
+            
+            </div>
+              <div class='col-3'><p class='title'><span style='margin-right: 255px;'>Follow Us</span>
+            
+                <p style='font-size: 16px; margin-top: 0px;'>Telegram</p>
+                <p style='font-size: 16px; margin-top: 0px;'>LinkedIn</p>
+                <p style='font-size: 16px; margin-top: 0px;'>Instagram</p>
+
+              </p></div>
+              
+              <div class='col-3'><p class='title'><span style='margin-right: 270px;'>Products</span>
+                <p style='font-size: 16px; margin-top: 0px;'>List</p>
+                <p style='font-size: 16px; margin-top: 0px;'>Task</p>
+                <p style='font-size: 16px; margin-top: 0px;'>Profile</p>
+
+              </p></div>
+
+              <hr>
+              <div id='footer-last'>
+                <p><b>ⓒ Copyright</b> 2023 ManagerIT Incorporated. All rights reserved.</p>
+                <p>Made with &#128151; by Gwen Diky</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+.card{
+    margin-left: 30px;
+    font: 18px Montserrat;
+    width: 70%;
+    margin: 0px auto;
+}
+
+.card a{
+    font: 22px Montserrat;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+
+.card p a{
+    font: 18px Montserrat;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+
+.search_button {
+    margin-top: 10px;
+}
+
+.search-tasks{
+    margin-bottom: 30px;
+}
+
+.start-button:hover{
+    color: white;
+}
+
+.start-button {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    width: 290px;
+    height: 55px;
+    margin-top: 59px;
+    font: 400 20px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #976aa1;
+    border: none;
+    border-radius: 30px;
+ 
+    justify-content: center;
+    text-align: center;
+  }
+
+  .start-button p{
+    padding-top: 15px;
+  }

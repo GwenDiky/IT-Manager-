@@ -1,0 +1,283 @@
+/*!
+* t-scroll v1.1.10 (https://t-scroll.com)
+* Copyright 2017 Tuds - Crazychicken
+* Licensed under the MIT license    
+*/
+
+// Core variables and mixins
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+
+// Core CSS
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+
+// Components w/ JavaScript
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+
+// Utility classes
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+
+
+@import '../node_modules/checkbox-radio/sass/checkbox_radio_img_sprite';
+@import '../node_modules/perfect-scrollbar/src/css/main';
+@import './theme/var';
+@import './theme/mixin';
+@import './theme/buttons';
+@import './theme/fonts';
+@import './theme/form';
+@import './theme/box';
+@import './theme/block';
+@import './theme/navbar';
+@import './theme/section';
+@import './theme/topbar';
+@import './theme/modal';
+@import './theme/media';
+@import './theme/doc.min';
+
+body {
+    background: #fff;
+    font-size: 16px;
+    font-family: 'Lato';
+    font-weight: normal;
+    color: #4b4b4b;
+}
+
+a {
+    &:active, &:focus {
+        color: $purple-dark-35;
+    }
+}
+
+
+.footer {
+    float: left;
+    width: 100%;
+    clear: both;
+    padding: 50px 0 25px 0;
+    background: #fff;
+    text-align: center;
+    small {
+        font-size: 12px;
+    }
+    &-gray {
+        margin-top: 50px;
+        background: $gray-light-95;
+    }
+}
+.page-header {
+    margin: 0;
+    background: $gray-light-95;
+}
+// DOCS
+// slide bar
+.sider-bar {
+    padding-top: 40px;
+    .nav {
+        border: none;
+        > li {
+            width: 100%;
+            > a {
+                color: $gray-dark-65;
+                width: 100%;
+                float: left;
+                border-radius: 0;
+                padding: 14px 30px 14px 0;
+                text-align: right;
+                border: none;
+                border-right: 3px solid transparent;
+            }
+            &:hover, &.active,
+            &.active:hover {
+                > a {
+                    border: none;
+                    border-right: 3px solid $purple-light-35;
+                    color: $purple-light-5;
+                    background: $gray-light-95;
+                    @include box-shadow(none);
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .nav {
+            > li {
+                > a {
+                    text-align: left;
+                    padding: 14px 0 14px 14px;
+                }
+                &:hover, &.active,
+                &.active:hover {
+                    > a {
+                        border: none;
+                        border-left: 3px solid $purple-light-35;
+                    }
+                }
+            }
+        }
+    }
+}
+.tab-content {
+    padding-top: 40px;
+}
+.tab-title {
+    margin: 0 0 15px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $gray-light-65;
+}
+.docs {
+    .navbar-default {
+        background: $purple-light-5;
+        .navbar-brand {
+            color: #fff;
+        }
+        .navbar-toggle {
+            &:hover, &:focus {
+                background: transparent;
+            }
+            .icon-bar {
+                background: #fff;
+            }
+        }
+        .navbar-nav {
+            > li {
+                > a {
+                    &, &:focus, &:hover, &:active {
+                        color: #fff;
+                        @media (max-width: 767px) {
+                            background: none;
+                        }
+                    }
+                }
+                &.active {
+                    > a {
+                        &, &:focus, &:hover, &:active {
+                            background: $purple-light-35;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End slide bar
+
+.thanks {
+    height: 100vh;
+    width: 100%;
+    min-height: 500px;
+    padding: 30px 0;
+    @media (max-width: 767px) {
+        min-height: 600px;
+    }
+    .section-title {
+        margin-top: -20px;
+        font-size: 42px;
+    }
+    @include display(box);
+    @include box-pack(center);
+    @include box-align(center);
+    .btn-lg {
+        min-width: 180px;
+        @include border-radius(30px);
+        margin: 20px 10px;
+        &:hover, &:focus, &:active {
+            color: $purple;
+        }
+    }
+    .btn-main {
+        &:hover, &:focus, &:active {
+            color: #fff;
+        }
+    }
+    .author {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        font-size: 14px;
+    }
+    @media (max-width: 767px) {
+        padding: 15px 10px;
+        .btn-lg {
+            margin: 10px;
+        }
+    }
+}
+
+.well {
+    margin-top: 30px;
+}
+
+.demo {
+    .highlight {
+        text-align: left;
+    }
+}
+
+.mg-bt-20 {
+    margin-bottom: 20px;
+}
+.mg-bt-30 {
+    margin-bottom: 30px;
+}
+
+.count-down-time {
+    font-size: 20px;
+    color: $gray-light-5;
+}
+
+.docs-options {
+    .list-unstyled {
+        li {
+            margin-bottom: 10px;
+        }
+    }
+    .block-options {
+        padding-bottom: 25px;
+        border-bottom: 1px solid $gray-light-65;
+    }
+    .block-options:last-child {
+        border: none;
+    }
+    .note {
+        margin: 20px 0 0 0;
+    }
+}
+.qc {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    a {
+        border: 1px solid #fafafa;
+        display: inline-block;
+    }
+}
+.stock {
+    padding-top: 10px;
+    a {
+        margin: 0 5px;
+        border: 1px solid #f5f5f5;
+        display: inline-block;
+    }
+}
+
+

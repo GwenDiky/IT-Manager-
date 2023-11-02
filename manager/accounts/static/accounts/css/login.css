@@ -1,0 +1,105 @@
+form {
+    width: 90%;
+    margin: 0px auto;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: right;
+    text-decoration: underline;
+}
+
+
+.welcome-container1 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-width: 475px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  
+  .welcome-container {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 49px;
+    padding-bottom: 48px;
+    background: #749bb5;
+    border-radius: 40px 40px 0px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .welcome-message {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font: 700 28px Montserrat;
+    color: white;
+    margin-top: 30px;
+    text-decoration: none;
+  }
+
+  .login-button-container {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 4px;
+  }
+  .login-button {
+    box-sizing: border-box;
+    display: block;
+    width: 154px;
+    height: 45px;
+    font: 700 20px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #749bb5;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+  }
+
+  .registration-section {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 84px;
+  }
+  .registration-info {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 30px;
+    padding-left: 25px;
+    font: 400 14px Montserrat;
+    color: black;
+  }
+  .register-link a {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin-top: 5px;
+    font: 700 14px Montserrat;
+    color: #749bb5;
+    text-decoration-line: underline;
+  }
+
+
+#icons {
+  padding-top: 40px;
+}
+  
+#icons a img{
+  width: 70%;
+
+}

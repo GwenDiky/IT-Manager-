@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block title %}Редактируйте аккаунт{% endblock %}
+
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/edit.css' %}">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+{% endblock %}
+
+
+{% block content %}
+    <div class='col-sm-10' style='margin: 0 auto;'>
+    <form method="POST" encrypte='multipart/form-data' class='form-control'>
+        <!--Атрибут encrypte чтобы обеспечить закачивание файлов на сайт-->
+        <br><h3 style="text-align: center;">Изменение данных учетной записи</h3>
+        <br>
+        {{ education_experience_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Сохранить" class='start-button'></p>
+        
+    </form>
+</div>
+{% endblock %}

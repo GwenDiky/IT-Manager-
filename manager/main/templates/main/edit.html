@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block title %}Редактирование задачи{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/edit.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h3>Изменение задачи</h3>
+    <form method='POST' class='full-form'>
+        <div class="form-group">
+            {% csrf_token %}
+            <p>
+                <label>Название задачи:</label><br>
+                <input type="text" name="title" class='form-control' value="{{ task.title }}" />
+            </p>
+
+            <p>
+                <label>Теги:</label><br>
+                <input type="text" name="tags" class='form-control' value="{{ task.tags.all|join:', ' }}" />
+            </p>
+
+            <p>
+                <label>Тип задачи:</label><br>
+                <input type="text" name="type" class='form-control' value="{{ task.type }}" />
+            </p>
+
+            <p>
+                <label>Срок:</label><br>
+                <input type="text" name="complete_date" class='form-control' value="{{ task.complete_date|date:"Y-m-d" }}" />
+            </p>
+
+            <p>
+                <label>Описание задачи:</label><br>
+                <textarea type="text" name="content" class='form-control' value="{{ task.content }}"></textarea>
+            </p>
+
+            <button type="submit" class='btn btn-outline-dark'>Сохранить</button>
+        </div>
+    </form>
+{% endblock %}

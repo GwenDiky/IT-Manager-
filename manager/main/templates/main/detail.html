@@ -1,0 +1,118 @@
+{% extends 'layout/base.html' %}
+{% load main_tags %}
+{% load static %}
+
+{% block title %}Список задач{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div style='margin-left: 30px;'>
+    <a class='start-button3' href="{% url 'main:all_tasks' %}">Назад</a>
+    <br>
+
+    <div class='card' style='margin-right: 30px;'>
+        <div class='card-body'>
+            <h3>{{ task.title }}</h3>
+            <ul class='detail-list' style='padding-left: 0px;'>
+            <li style='padding: 0px;'><b>В разработке участвуют:</b> 
+                {% for user in task.person.all %}
+                        <a href='{% url "accounts:profile" user.id %}' style='font-size: 15px; text-decoration: underline;'>{{ user.username }}</a>,
+                {% endfor %}
+            </li>
+            <li><b>Описание задачи:</b> {{ task.content }}</li>
+            <li><b>Сложность задачи:</b> {{ task.type }};</li>
+            <li><b>Компания:</b> {{ task.company }};</li>
+            <li><b>Статус:</b> {% if task.status.title == '+' %}
+            Завершена;{%  endif %}</li>
+            <li><b>Создана:</b> {{ task.created }};</li>
+            <li><b>Последнее изменение:</b> {{ task.updated }};</li>
+            <li><b>Срок:</b> {{ task.complete_date }};</li>
+            <hr>
+            <li><b>Теги:</b>
+                {% for tag in task.tags.all %}
+                <a href="{% url 'main:task_list_by_tag' tag.slug %}">{{ tag.slug }}</a>
+                    {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </li></ul>
+            <hr>
+            <p>
+                <div class='row' style='width: 80%;'>
+                    <div class='col-sm-2'><a id='task-button-2' role="button" href="{% url 'main:task_share' task.id %}">Поделиться</a></div>
+                    <div class='col-sm-2'><a class='start-button2' role='button' href='edit/{{ task.id }}'>Редактировать</a></div>
+                    <div class='col-sm-2'><a id='task-button-2' role='button' href='delete/{{ task.id }}'>Удалить</a></div>
+                    <div class='col-sm-2'><a href='task_pdf/{{ task.id }}' role='button' class='start-button'>Скачать (pdf)</a></div>
+                </div>
+            </p>
+            {{ task.image.image }}
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class='card' style='margin-right: 30px;'>
+            <div class='card-body'>
+            <h3>Похожие посты:</h3>
+            {% for task in similiar_tasks %}
+                <p>
+                    <a href="{{ task.get_absolute_url }}">{{ task.title }}</a>
+                </p>
+                {% empty %}
+                Похожих постов нет.
+            {% endfor %}
+        </div></div>
+
+        <br><br>
+
+        <div class='row'>
+            <div class='col'>
+                <div class='card' style='margin-right: 30px; padding-top: 0px; margin-top: 0px;'>
+                    <div class='card-body' style='padding-top: 0px; margin-top: 0px;'>
+                        <div class="comment_section">
+                            {% include "main/includes/comment_form.html" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col'>
+
+            <div class='card' style='margin-right: 30px;'>
+                <div class='card-body'>
+            {% with comments.count as total_comments %}
+            <h3>
+                Количество комментариев: {{ total_comments }}
+            </h3>
+        {% endwith %}
+
+        {% for comment in comments %}
+        <div class="comment">
+            <div class="card" style="width: 25rem;">
+            <p class="info">
+                
+                    <div class="card-body">
+                      <h5 class="card-title">{{ comment.name }}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ comment.created|date:"d M Y"  }}</h6>
+                      <p class="card-text">{{ comment.body|linebreaks }}</p>
+                    </div>
+                  </div>
+            </p>
+        </div>
+            <br>
+        </div>
+        {% empty %}
+        <p>Нет комментариев.</p>
+    {% endfor %}
+    </div>
+</div></div>
+
+    
+    </div>
+
+    <br>
+
+    </div>
+
+{% endblock %}

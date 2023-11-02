@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block extra_head_links %}
+  <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/registration.css' %}">
+{% endblock %}
+
+{% block content %}
+{% if form.errors %}
+    <mark>При попытке зарегистрироваться произошла ошибка.</mark>
+{% endif %}
+<ul class='error-list' style='color: red; text-decoration: none; list-style-type: none;'>
+  <li>{{form.errors.experience_years}}</li>
+  <li>{% for error in form.errors%}
+      {{ error.help_text }}
+    {% endfor %}
+  </li>
+</ul>
+<div class='container'>
+  <div class='row' style='width: 100%;'>
+      <form action="{% url 'accounts:register_user' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Зарегистрироваться" class='start-button'>
+        <br><br>
+      </form>
+    </div>
+</div>
+
+{% endblock %}

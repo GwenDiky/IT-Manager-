@@ -1,0 +1,28 @@
+section {
+    margin-left: 30px;
+    font: 18px Montserrat;
+}
+
+form{
+    margin: 0 auto;
+
+}
+
+.start-button {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    width: 231px;
+    height: 49px;
+    margin-top: 59px;
+    font: 700 20px Montserrat;
+    color: white;
+    cursor: pointer;
+    background: #976aa1;
+    border: none;
+    border-radius: 30px;
+ 
+    justify-content: center;
+    text-align: center;
+  }

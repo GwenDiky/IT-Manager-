@@ -1,0 +1,77 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 500px));
+    justify-items: center;
+    align-items: center;
+    padding: 20px 0px 0px 30px;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Rancho';
+    font-size: 60px;
+    margin-bottom: 0px;
+}
+
+.title {
+    font-family: 'Rancho';
+    margin: 0px;
+}
+
+#description {
+    color: #9D9D9D;
+    font-size: 24px;
+}
+
+
+.box{
+    box-shadow: 0px 5px 5px rgb(179, 179, 179);
+    background-color: #faf7ff;
+    margin-bottom: 40px; 
+    margin-top: 20px;
+    padding-top: 30px;
+    width: 300px;
+    height: 320px;
+    text-align: center;
+}
+
+h3{
+    text-indent: 10px;
+    font-family: 18px;
+}
+ 
+
+p {
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.add_button{
+    background-color: #a4aefa;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 32px;
+    border: 3px #fbfcff solid;
+    border-radius: 15px;
+    color: white;
+    width: 50%;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+.info{
+    font-family: Montserrat;
+    margin-left: 100px;
+}
+
+a {
+    color: black;
+}
+
+.add_button:hover{
+    color: white;
+}
+

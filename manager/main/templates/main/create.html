@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+{% load main_tags %}
+{% load static %}
+
+{% block title %}Добавление задачи{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/create.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    <div class='row' style='width: 100%;'>
+        <div class='col'>
+            <form method="POST" class="pt-3" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Добавить" class='start-button'>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

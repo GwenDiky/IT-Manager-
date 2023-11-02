@@ -1,0 +1,149 @@
+{% extends 'layout/base.html' %}
+{% load main_tags %}
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block extra_head_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/profile.css' %}">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+{% endblock %}
+
+{% block content %}
+
+    {% for profile in profiles %}
+        <div class='container' style='margin-bottom: 30px;'>
+            <div class='row'>
+                
+                <div class='col-sm-4'>
+                    {% if profile.photo %}
+                        <div class='container-box'>
+                            <img class='image-container' alt="{{ profile.user.first_name }}" src="{{ profile.photo.url }}">
+                            <div class='card-container'>
+                                <div class='container-image'>
+                                    <a href="{% url 'main:main_page' %}"><i class="fi fi-rr-angle-right" style='font-size: 25px; text-align: left;'></i></a>
+
+                                    {% if profile.user != request.user %}            
+                                        {% for p in current_profile %}
+                                            {% if profile not in p.follows.all %}
+                                                <a href="{% url 'accounts:add-coworkers' profile.id %}" data-id='{{ user.id }}' data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button"><i class="fi fi-rr-user-add" style='font-size: 25px;'></i></a>
+                                            {% endif %}
+                                        {% endfor %}
+
+
+                                        <a href="{% url 'accounts:message-form' %}"><i class="fi fi-rr-paper-plane" style='font-size: 25px;'></i></a>
+                                    {% endif %}
+                                    {% if profile.user == request.user %}
+                                        <a href="{% url 'accounts:password_change' %}"><i class="fi fi-rr-key" style='font-size: 25px;'></i></a>
+                                        <a href="{% url 'accounts:edit' %}"><i class="fi fi-rr-settings-sliders" style='font-size: 25px;'></i></a>
+                                    {% endif %}
+                                    
+                                </div>
+                        
+                            </div>
+
+                           
+
+                        </div>
+                </div>
+                <div class='col-sm-8'>
+                    <div class='div-style-86a2e07e offset-1' style='height: 430px;'>
+                        <div class='container'>
+                                <div class='row'>
+                                    <div class='col'>
+                                        <div class='div-style-b74be968'>
+                                            <p class='p-style-edd184ef'>{{ profile.user.first_name }} {{ profile.user.last_name }}</p>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Местоимения:</p>
+                                                {% if profile.sex == 'М' %}
+                                                    <p class='p-style-d77383cd'>он/его</p>
+                                                {% elif profile.sex == 'Ж' %}
+                                                    <p class='p-style-d77383cd'>она/её</p>
+                                                {% else %}
+                                                    <p class='p-style-d77383cd'>они/их</p>
+                                                {% endif %}
+                                                
+                                            </div>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Дата рождения: </p>
+                                                <p class='p-style-ad46357e'>{{ profile.date_of_birth }}</p>
+                                            </div>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Город: </p>
+                                                <p class='p-style-ad46357e'>{{ profile.city }}, {{ profile.country }}</p>
+                                            </div>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Место работы: </p>
+                                                <p class='p-style-ad46357e'>{{ profile.current_company }}</p>
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class='col'>
+
+                                        <div class='div-style-b74be968'>
+                                            <p class='p-style-ec3cf6b1'>{% if profile.user.is_active == True %}В сети{% else %}Оффлайн{%endif%}</p>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Телефон:</p>
+                                                {% if profile.phone_number %}
+                                                <p class='p-style-d77383cd'>{{ profile.phone_number }}</p>
+                                                {% else %}
+                                                <p class='p-style-d77383cd'>-</p>
+                                                {% endif %}
+                                            </div>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Должность: </p>
+                                                <p class='p-style-ad46357e'>{{ profile.job_title }}</p>
+                                            </div>
+                                            <div class='div-style-84f82e7a'>
+                                                <p class='p-style-5029a530'>Другие соцсети: </p>
+                                                <p class='p-style-ad46357e'>{{ profile.contacts }}</p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class='col'>
+                                        <p class='p-style-edd184ef' style='font-size: 20px;'>Область профессиональных интересов</h5>
+                                        <p class='p-style-ad46357e' style='margin-left:0px;'>{{ profile.skills|capfirst }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class='container'style='margin-top: 50px;'>
+                <div class='row ' id='about_me'>  
+                    <div class='col-sm-4' id='about_me1'>
+                        <div class='row'><p class='p-style-edd184ef' style='font-size: 20px;'>Суммарный опыт: {{ profile.experience_years }} года 
+                            <a href="{% url 'accounts:edit-education-and-experience' %}"><i class="fi fi-rr-pencil" style='margin-left: 10px;'></i></a>
+                        </p></div>
+                        <div class='row'><p class='p-style-edd184ef' style='font-size: 20px;'>Опыт работы: </p>
+                            <p class='p-style-ad46357e' style='font-size: 16px;'>{{ profile.experience|capfirst }}</p>
+                        </div>
+                        <div class='row'>
+                            <p class='p-style-edd184ef' style='font-size: 20px;'>Образование: </p>
+                            <p class='p-style-ad46357e' style='font-size: 16px;'>{{ profile.education|capfirst }}</p>
+                        </div>
+                    </div>
+                    <div class='col-sm-7 offset-1' id='about_me2'>
+                        <div class='row'>
+                            <p class='p-style-edd184ef' style='font-size: 20px;'>О себе 
+                                <a href="{% url 'accounts:edit-description' %}"><i class="fi fi-rr-pencil" style='margin-left: 10px;'></i></a>
+                            </p>
+                            <p class='p-style-ad46357e' style='font-size: 16px; font-family: Montserrat;'>{{ profile.description|safe }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+

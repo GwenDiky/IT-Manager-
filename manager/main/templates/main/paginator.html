@@ -1,0 +1,21 @@
+<!--типовой шаблон-->
+{% load static %}
+
+{% block extra_head_links %}
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/paginator.css' %}">
+{% endblock %}
+
+<div class="paginator">
+    <span class="step-links">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}"><img src="{% static 'main/img/left.png' %}" alt='Предыдущая'></a>
+        {% endif %}
+        <span class="current">
+            Страница {{ page.number }} из {{ page.paginator.num_pages }}. 
+        </span>
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}"><img src="{% static 'main/img/right.png' %}" alt='Следующая'></a>
+        {% endif %}
+    </span>
+</div>

@@ -1,0 +1,59 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block extra_head_links %}
+  <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/login.css' %}">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4'></div>
+    <div class='col-lg-4'>
+      <div class='welcome-container1'>
+          <div class='welcome-container'>
+            <p class='welcome-message'>Добро пожаловать!</p>
+          </div>
+          <form action = "" method='POST'>
+            {% csrf_token %}
+            <br><br>
+              <div>
+                <input type="text" class="form-control" aria-describedby="emailHelp" name="username" placeholder='Логин'>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"></label>
+                <input type="password" class="form-control" name="password" placeholder='Пароль'>
+              </div>
+
+              <p style='margin-right: 20px;н'>Забыли логин/пароль?</p><br>
+
+              <div class='login-button-container'>
+                <button type="submit" class="login-button">Войти</button>
+              </div>
+
+
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+
+
+            <div class='row' style='margin: 0px auto;' id="icons">
+              <div class='col'></div>
+              <div class='col'><a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'accounts/img/facebook.png' %}" class='rounded' id='task-dashbord-img' alt="Facebook"></a></div>
+              <div class='col'><a href="{% url 'social:begin' 'twitter' %}"><img src="{% static 'accounts/img/twitter.png' %}" class='rounded' id='task-dashbord-img' alt="Twitter" ></a></div>
+              <div class='col'><a href="{% url 'social:begin' 'github' %}"><img src="{% static 'accounts/img/github.png' %}" class='rounded' id='task-dashbord-img' alt="GitHub" ></a></div>
+              <div class='col'></div>
+            </div>     
+            </form>
+            <div class='registration-section'>
+              <p class='registration-info'>Нет аккаунта?</p>
+              <p class='register-link'><a href="{% url 'accounts:register_user' %}">Зарегистрироваться</a></p><br>
+            </div>
+        </div>
+      </div>
+      <div class='col-sm-4'></div>
+    </div>
+    <br><br>
+</div>
+{% endblock %}

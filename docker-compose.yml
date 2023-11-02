@@ -1,0 +1,26 @@
+version: '24.0.6'
+
+services:
+  web:
+    build: .
+    command: python manager/manage.py runserver 127.0.0.1:8000
+    ports: 
+      - 8000:8000
+    depends_on:
+      - pgdb
+  pgdb:
+    # Использование готового образа postgres
+    image: postgres
+    # Задание переменных окружения для контейнера с postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+     # Задание имени контейнера для сервиса pgdb
+    container_name: pgdb
+     # Связывание тома с директорией в контейнере для сохранения данных postgres
+    volumes:
+      - pgdbdata:/var/lib/postgresql/data/
+
+volumes:
+  pgdbdata: null
